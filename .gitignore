@@ -1,0 +1,5 @@
+IntegerMapper.Core/bin/
+IntegerMapper.Core/obj/
+IntegerMapper.Core.Tests/bin/
+IntegerMapper.Core.Tests/obj/
+.vs/
