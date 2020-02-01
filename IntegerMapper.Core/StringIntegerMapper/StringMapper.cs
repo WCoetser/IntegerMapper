@@ -1,7 +1,8 @@
-﻿using System.Text;
-using IntegerMapper.Core.ByteEnumerable;
+﻿using System.Linq;
+using System.Text;
+using IntegerMapper.Core.ByteEnumerableIntegerMapper;
 
-namespace IntegerMapper.Core.String
+namespace IntegerMapper.Core.StringIntegerMapper
 {
     /// <summary>
     /// Maps equal strings to equal integers.
@@ -20,6 +21,19 @@ namespace IntegerMapper.Core.String
             {
                 byte[] byteString = Encoding.UTF8.GetBytes(inputValue);
                 return _integerMapper.Map(byteString);
+            }
+        }
+
+        public string ReverseMap(uint mappedValue)
+        {
+            if (mappedValue == MapConstants.NullOrEmpty)
+            {
+                return string.Empty;
+            }
+            else
+            {
+                byte[] stringAsByteArray = _integerMapper.ReverseMap(mappedValue).ToArray();
+                return Encoding.UTF8.GetString(stringAsByteArray);
             }
         }
     }

@@ -1,21 +1,24 @@
-﻿using IntegerMapper.Core.StringIntegerMapper;
-using IntegerMapper.Core.Tests.Fixtures;
+﻿using System;
 using Xunit;
+using IntegerMapper.Core.ByteEnumerableIntegerMapper;
+using System.Linq;
+using IntegerMapper.Core.Tests.Fixtures;
+using IntegerMapper.Core.ByteArrayIntegerMapper;
 
 namespace IntegerMapper.Core.Tests
 {
-    [Collection("StringMapper tests for mapping strings to integers")]
-    public class StringMapperTests
+    [Collection("ByteArrayMapper tests for mapping byte enumerables to integers")]
+    public class ByteArrayMapperTests
     {
         [Fact]
-        public void ShouldMapNullAndEmptyToZero()
+        public void ShouldMapNullOrEmptyToZero()
         {
             // Arrange
-            var mapper = new StringMapper();
+            var mapper = new ByteArrayMapper();
 
             // Act
             var r1 = mapper.Map(null);
-            var r2 = mapper.Map(string.Empty);
+            var r2 = mapper.Map(Array.Empty<byte>());
 
             // Assert
             Assert.Equal(MapConstants.NullOrEmpty, r1);
@@ -23,26 +26,13 @@ namespace IntegerMapper.Core.Tests
         }
 
         [Fact]
-        public void ShouldNotMapWhitespaceToZero()
-        {
-            // Arrange
-            var mapper = new StringMapper();
-
-            // Act
-            var r = mapper.Map("\t");
-
-            // Assert
-            Assert.NotEqual(MapConstants.NullOrEmpty, r); 
-        }
-
-        [Fact]
         public void ShouldMapValueToFirstAssignableInteger()
         {
             // Arrange
-            var IntegerMapper = new StringMapper();
+            var mapper = new ByteArrayMapper();
 
             // Act
-            var r = IntegerMapper.Map("a");
+            var r = mapper.Map(new byte[] { 0x01 });
 
             // Assert
             Assert.Equal(MapConstants.FirstMappableInteger, r);
@@ -52,10 +42,10 @@ namespace IntegerMapper.Core.Tests
         public void ShouldRepeatedlyMapSameValuesToSameInputs()
         {
             // Arrange
-            var mapper = new StringMapper();
-            var testCases = TestFixtures.GetTestDataForString();
+            var mapper = new ByteArrayMapper();
+            var testData = TestFixtures.GetTestDataForByteArrays();
 
-            foreach (var testCase in testCases)
+            foreach (var testCase in testData)
             {
                 for (int i = 0; i < 3; i++)
                 {
@@ -72,31 +62,31 @@ namespace IntegerMapper.Core.Tests
         public void ShouldDoInverseMapForZero()
         {
             // Arrange
-            var mapper = new StringMapper();
+            var mapper = new ByteArrayMapper();
+            var mappedValue = mapper.Map(Array.Empty<byte>());
 
             // Act
-            var r = mapper.Map(string.Empty);
-            var rInverse = mapper.ReverseMap(r);
+            var retrievedValue = mapper.ReverseMap(mappedValue);
 
             // Assert
-            Assert.Empty(rInverse);
+            Assert.Empty(retrievedValue);
         }
 
         [Fact]
         public void ShouldDoInverseMapForValues()
         {
             // Arrange
-            var mapper = new StringMapper();
-            var testData = TestFixtures.GetTestDataForString();
+            var mapper = new ByteEnumerableMapper();
+            var testData = TestFixtures.GetTestDataForByteArrays();
 
-            foreach (var test in testData)
+            foreach (var testCase in testData)
             {
                 // Act
-                var r = mapper.Map(test.Input);
+                var r = mapper.Map(testCase.Input);
                 var rInverse = mapper.ReverseMap(r);
 
                 // Assert
-                Assert.Equal(test.Input, rInverse);
+                Assert.True(Enumerable.SequenceEqual(testCase.Input, rInverse));
             }
         }
     }
