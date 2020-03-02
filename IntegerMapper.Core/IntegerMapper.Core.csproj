@@ -2,7 +2,31 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
-	<Nullable>Enable</Nullable>
+	  <Nullable>Enable</Nullable>
+
+    <!-- BEGIN NUGET METADATA -->
+
+    <PackageId>IntegerMapper.Core</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Wikus Coetser</Authors>
+    <Company></Company>
+    <Title>Integer Mapper</Title>
+    <PackageDescription>Integer Mapper maps .NET types to monotonically increasing integers starting from 0. Null or Empty is mapped to 0. Mappings can be reversed. Integer Mapper is useful for implementing caching and algorithms requiring ranked alphabets over a problem domain.</PackageDescription>
+    <Description>Core assembly for Integer Mapper containing base abstraction types and implementations.</Description>
+    <Copyright>Wikus Coetser, 2020, MIT Licence</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <!-- TODO: - <PackageReleaseNotes></PackageReleaseNotes>-->
+    <!-- <IncludeSource>True</IncludeSource> -->
+    <IsTool>False</IsTool>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/WCoetser/IntegerMapper.git</RepositoryUrl>
+    <RepositoryBranch>master</RepositoryBranch>
+    <!-- TODO: <MinClientVersion></MinClientVersion>-->
+    <tags>Integer Mapper Algorithms Ranked Alphabet</tags>
+    <PackageTags>Integer Mapper Algorithms Ranked Alphabet</PackageTags>
+
+    <!-- END NUGET METADATA -->
+
   </PropertyGroup>
 
   <ItemGroup>
@@ -11,5 +35,4 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
   </ItemGroup>
-
 </Project>

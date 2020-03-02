@@ -3,3 +3,6 @@ IntegerMapper.Core/obj/
 IntegerMapper.Core.Tests/bin/
 IntegerMapper.Core.Tests/obj/
 .vs/
+.vscode/launch.json
+.vscode/tasks.json
+nupkgs/
