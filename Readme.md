@@ -38,6 +38,10 @@ IIntegerMapper<byte[]> mapper1 = new ByteArrayMapper();
 IIntegerMapper<IEnumerable<byte>> mapper2 = new ByteEnumerableMapper();
 ```
 
+# Installation via Nuget
+
+See [https://www.nuget.org/packages/Trs.IntegerMapper.Core/](https://www.nuget.org/packages/Trs.IntegerMapper.Core/) for nuget package.
+
 # Licence
 
 Integer Mapper is released under the MIT open source licence. See LICENCE.txt in this repository for the full text.

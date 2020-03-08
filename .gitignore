@@ -5,4 +5,4 @@ IntegerMapper.Core.Tests/obj/
 .vs/
 .vscode/launch.json
 .vscode/tasks.json
-nupkgs/
+nupkg/
