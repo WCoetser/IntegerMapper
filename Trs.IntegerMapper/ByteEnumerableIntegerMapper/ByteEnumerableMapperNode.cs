@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Trs.IntegerMapper.Core.ByteEnumerableIntegerMapper
+namespace Trs.IntegerMapper.ByteEnumerableIntegerMapper
 {
     internal class ByteEnumerableMapperNode
     {

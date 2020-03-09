@@ -1,9 +1,9 @@
 ﻿using Xunit;
 
-using Trs.IntegerMapper.Core.StringIntegerMapper;
-using Trs.IntegerMapper.Core.Tests.Fixtures;
+using Trs.IntegerMapper.StringIntegerMapper;
+using Trs.IntegerMapper.Tests.Fixtures;
 
-namespace Trs.IntegerMapper.Core.Tests
+namespace Trs.IntegerMapper.Tests
 {
     [Collection("StringMapper tests for mapping strings to integers")]
     public class StringMapperTests

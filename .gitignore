@@ -1,7 +1,7 @@
-Trs.IntegerMapper.Core/bin/
-Trs.IntegerMapper.Core/obj/
-Trs.IntegerMapper.Core.Tests/bin/
-Trs.IntegerMapper.Core.Tests/obj/
+Trs.IntegerMapper/bin/
+Trs.IntegerMapper/obj/
+Trs.IntegerMapper.Tests/bin/
+Trs.IntegerMapper.Tests/obj/
 .vs/
 .vscode/launch.json
 .vscode/tasks.json

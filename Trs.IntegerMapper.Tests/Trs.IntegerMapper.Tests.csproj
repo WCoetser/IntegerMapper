@@ -25,7 +25,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Trs.IntegerMapper.Core\Trs.IntegerMapper.Core.csproj" />
+    <ProjectReference Include="..\Trs.IntegerMapper\Trs.IntegerMapper.csproj" />
   </ItemGroup>
 
 </Project>

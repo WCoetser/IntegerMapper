@@ -1,4 +1,4 @@
-﻿namespace Trs.IntegerMapper.Core.Tests.Fixtures
+﻿namespace Trs.IntegerMapper.Tests.Fixtures
 {
     public static class TestFixtures
     {
