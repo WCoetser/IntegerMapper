@@ -1,4 +1,4 @@
-﻿namespace IntegerMapper.Core
+﻿namespace Trs.IntegerMapper.Core
 {
     /// <summary>
     /// Maps any object to any object to a monotonically consecutively increasing unsigned integer.

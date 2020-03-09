@@ -1,11 +1,12 @@
 ﻿using System;
 using Xunit;
-using IntegerMapper.Core.ByteEnumerableIntegerMapper;
 using System.Linq;
-using IntegerMapper.Core.Tests.Fixtures;
-using IntegerMapper.Core.ByteArrayIntegerMapper;
 
-namespace IntegerMapper.Core.Tests
+using Trs.IntegerMapper.Core.ByteEnumerableIntegerMapper;
+using Trs.IntegerMapper.Core.ByteArrayIntegerMapper;
+using Trs.IntegerMapper.Core.Tests.Fixtures;
+
+namespace Trs.IntegerMapper.Core.Tests
 {
     [Collection("ByteArrayMapper tests for mapping byte enumerables to integers")]
     public class ByteArrayMapperTests

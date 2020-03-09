@@ -1,8 +1,9 @@
-﻿using IntegerMapper.Core.StringIntegerMapper;
-using IntegerMapper.Core.Tests.Fixtures;
-using Xunit;
+﻿using Xunit;
 
-namespace IntegerMapper.Core.Tests
+using Trs.IntegerMapper.Core.StringIntegerMapper;
+using Trs.IntegerMapper.Core.Tests.Fixtures;
+
+namespace Trs.IntegerMapper.Core.Tests
 {
     [Collection("StringMapper tests for mapping strings to integers")]
     public class StringMapperTests
@@ -32,7 +33,7 @@ namespace IntegerMapper.Core.Tests
             var r = mapper.Map("\t");
 
             // Assert
-            Assert.NotEqual(MapConstants.NullOrEmpty, r); 
+            Assert.NotEqual(MapConstants.NullOrEmpty, r);
         }
 
         [Fact]

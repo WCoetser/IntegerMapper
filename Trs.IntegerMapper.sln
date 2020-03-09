@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29709.97
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A7597E3B-7744-445B-B24C-40BCC25AEDF3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Trs.IntegerMapper.Core", "Trs.IntegerMapper.Core\Trs.IntegerMapper.Core.csproj", "{B0636AB0-2C2D-4DCB-8266-2F8A3551D4AE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Trs.IntegerMapper.Core.Tests", "Trs.IntegerMapper.Core.Tests\Trs.IntegerMapper.Core.Tests.csproj", "{E5A17430-962F-4D50-8B43-08753C7575F2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B0636AB0-2C2D-4DCB-8266-2F8A3551D4AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0636AB0-2C2D-4DCB-8266-2F8A3551D4AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0636AB0-2C2D-4DCB-8266-2F8A3551D4AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0636AB0-2C2D-4DCB-8266-2F8A3551D4AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5A17430-962F-4D50-8B43-08753C7575F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5A17430-962F-4D50-8B43-08753C7575F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5A17430-962F-4D50-8B43-08753C7575F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5A17430-962F-4D50-8B43-08753C7575F2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EE370306-8D3A-4100-9BF1-C493A29B3F72}
+	EndGlobalSection
+EndGlobal

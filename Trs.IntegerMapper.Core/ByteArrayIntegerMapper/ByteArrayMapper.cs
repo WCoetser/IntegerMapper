@@ -1,7 +1,8 @@
 ﻿using System.Linq;
-using IntegerMapper.Core.ByteEnumerableIntegerMapper;
 
-namespace IntegerMapper.Core.ByteArrayIntegerMapper
+using Trs.IntegerMapper.Core.ByteEnumerableIntegerMapper;
+
+namespace Trs.IntegerMapper.Core.ByteArrayIntegerMapper
 {
     public class ByteArrayMapper : IIntegerMapper<byte[]>
     {
