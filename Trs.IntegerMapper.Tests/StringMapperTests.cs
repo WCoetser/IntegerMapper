@@ -1,5 +1,4 @@
 ﻿using Xunit;
-
 using Trs.IntegerMapper.StringIntegerMapper;
 using Trs.IntegerMapper.Tests.Fixtures;
 

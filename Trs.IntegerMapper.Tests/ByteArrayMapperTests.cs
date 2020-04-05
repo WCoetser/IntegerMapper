@@ -1,7 +1,6 @@
 ﻿using System;
-using Xunit;
 using System.Linq;
-
+using Xunit;
 using Trs.IntegerMapper.ByteEnumerableIntegerMapper;
 using Trs.IntegerMapper.ByteArrayIntegerMapper;
 using Trs.IntegerMapper.Tests.Fixtures;

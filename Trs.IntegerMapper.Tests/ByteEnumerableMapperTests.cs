@@ -1,6 +1,5 @@
 ﻿using System;
 using Xunit;
-
 using Trs.IntegerMapper.ByteEnumerableIntegerMapper;
 
 namespace Trs.IntegerMapper.Tests

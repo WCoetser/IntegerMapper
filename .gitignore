@@ -6,3 +6,5 @@ Trs.IntegerMapper.Tests/obj/
 .vscode/launch.json
 .vscode/tasks.json
 nupkg/
+UnitTestCoverageReport/
+Trs.IntegerMapper.Tests/TestResults/

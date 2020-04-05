@@ -1,5 +1,4 @@
 ﻿using System.Linq;
-
 using Trs.IntegerMapper.ByteEnumerableIntegerMapper;
 
 namespace Trs.IntegerMapper.ByteArrayIntegerMapper

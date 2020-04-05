@@ -1,6 +1,5 @@
 ﻿using System.Linq;
 using System.Text;
-
 using Trs.IntegerMapper.ByteEnumerableIntegerMapper;
 
 namespace Trs.IntegerMapper.StringIntegerMapper
