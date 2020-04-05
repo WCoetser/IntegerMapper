@@ -75,5 +75,7 @@ namespace Trs.IntegerMapper.ByteEnumerableIntegerMapper
             var reverseNode = _inverseMap[(int)mappedValue];
             return reverseNode.GetRepresentedValue().Reverse();
         }
+
+        public uint MappedObjectsCount => _nextAssignableInteger;
     }
 }

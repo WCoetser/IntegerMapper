@@ -11,5 +11,7 @@ namespace Trs.IntegerMapper.ByteArrayIntegerMapper
         public uint Map(byte[]? inputValue) => _byteEnumerableMapper.Map(inputValue);
 
         public byte[] ReverseMap(uint mappedValue) => _byteEnumerableMapper.ReverseMap(mappedValue).ToArray();
+
+        public uint MappedObjectsCount => _byteEnumerableMapper.MappedObjectsCount;
     }
 }

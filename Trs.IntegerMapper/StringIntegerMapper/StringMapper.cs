@@ -7,6 +7,7 @@ namespace Trs.IntegerMapper.StringIntegerMapper
 {
     /// <summary>
     /// Maps equal strings to equal integers.
+    /// Null and empty string is mapped to 0.
     /// </summary>
     public class StringMapper : IIntegerMapper<string>
     {
@@ -37,5 +38,7 @@ namespace Trs.IntegerMapper.StringIntegerMapper
                 return Encoding.UTF8.GetString(stringAsByteArray);
             }
         }
+
+        public uint MappedObjectsCount => _integerMapper.MappedObjectsCount;
     }
 }

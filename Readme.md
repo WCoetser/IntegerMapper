@@ -1,5 +1,7 @@
 # Overview
 
+** NB: THIS IS PRE-RELEASE SOFTWARE **
+
 _Integer Mapper_ maps data structures to monotonically increasing consecutive integers starting from 0, with 0 being reserved for `null` or any collection that is empty. This applies to strings as well, with the empty string being mapped to 0.
 
 Integer Mapper is useful for implementing hashing and equality in the sense that everything is always mapped to a predictable value. The value can serve as a hash code, but that can also directly be used to compare two objects.
@@ -17,19 +19,22 @@ IIntegerMapper<string> mapper = new StringMapper();
 
 mapper.Map("One");
 mapper.Map("Two");
-ulong lastValue = mapper.Map("Three");
+mapper.Map("Three");
 
-for (uint i = MapConstants.FirstMappableInteger; i <= lastValue; i++)
+for (uint i = 0; i < mapper.MappedObjectsCount; i++)
 {
     string originalValue = mapper.ReverseMap(i);
     Console.WriteLine($"{i} => {originalValue}");
 }
 
 // Output:
+// 0 =>
 // 1 => One
 // 2 => Two
 // 3 => Three
 ```
+
+Note that all collections contain the empty case, which is mapped to 0. For example, `StringMapper` maps 0 to the empty string. This also means that all collections contain at least one element.
 
 Integer Mapper also supports `byte[]` and `IEnumberable<byte>`, ex.:
 
@@ -40,7 +45,7 @@ IIntegerMapper<IEnumerable<byte>> mapper2 = new ByteEnumerableMapper();
 
 # Installation via Nuget
 
-See [https://www.nuget.org/packages/Trs.IntegerMapper.Core/](https://www.nuget.org/packages/Trs.IntegerMapper.Core/) for nuget package.
+See [https://www.nuget.org/packages/Trs.IntegerMapper/](https://www.nuget.org/packages/Trs.IntegerMapper/) for nuget package.
 
 # Licence
 

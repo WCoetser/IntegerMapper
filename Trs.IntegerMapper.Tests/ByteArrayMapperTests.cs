@@ -8,9 +8,20 @@ using Trs.IntegerMapper.Tests.Fixtures;
 
 namespace Trs.IntegerMapper.Tests
 {
-    [Collection("ByteArrayMapper tests for mapping byte enumerables to integers")]
+    [Collection("ByteArrayMapper tests for mapping byte arrays to integers")]
     public class ByteArrayMapperTests
     {
+        [Fact]
+        public void DefaultContainerShouldContainEmptyCase()
+        {
+            // Act
+            var mapper = new ByteArrayMapper();
+
+            // Assert
+            Assert.Equal(1u, mapper.MappedObjectsCount);
+            Assert.Equal(Array.Empty<byte>(), mapper.ReverseMap(0));
+        }
+
         [Fact]
         public void ShouldMapNullOrEmptyToZero()
         {
@@ -57,6 +68,8 @@ namespace Trs.IntegerMapper.Tests
                     Assert.Equal(testCase.ExpectedOutput, r);
                 }
             }
+
+            Assert.Equal(testData.Length + 1, (int)mapper.MappedObjectsCount);
         }
 
         [Fact]

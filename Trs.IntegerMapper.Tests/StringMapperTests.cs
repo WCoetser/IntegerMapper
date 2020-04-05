@@ -9,6 +9,17 @@ namespace Trs.IntegerMapper.Tests
     public class StringMapperTests
     {
         [Fact]
+        public void DefaultContainerShouldContainEmptyCase()
+        {
+            // Act
+            var mapper = new StringMapper();
+
+            // Assert
+            Assert.Equal(1u, mapper.MappedObjectsCount);
+            Assert.Equal(string.Empty, mapper.ReverseMap(0));
+        }
+
+        [Fact]
         public void ShouldMapNullAndEmptyToZero()
         {
             // Arrange
@@ -67,6 +78,7 @@ namespace Trs.IntegerMapper.Tests
                     Assert.Equal(testCase.ExpectedOutput, r);
                 }
             }
+            Assert.Equal(testCases.Length + 1, (int)mapper.MappedObjectsCount);
         }
 
         [Fact]
@@ -75,12 +87,11 @@ namespace Trs.IntegerMapper.Tests
             // Arrange
             var mapper = new StringMapper();
 
-            // Act
-            var r = mapper.Map(string.Empty);
-            var rInverse = mapper.ReverseMap(r);
+            // Act            
+            var rInverse = mapper.ReverseMap(MapConstants.NullOrEmpty);
 
             // Assert
-            Assert.Empty(rInverse);
+            Assert.Equal(rInverse, string.Empty);
         }
 
         [Fact]

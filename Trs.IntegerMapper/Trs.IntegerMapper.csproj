@@ -7,7 +7,7 @@
     <!-- BEGIN NUGET METADATA -->
 
     <PackageId>Trs.IntegerMapper</PackageId>
-    <Version>0.1.1</Version>
+    <Version>0.1.2</Version>
     <Authors>Wikus Coetser</Authors>
     <Company></Company>
     <Title>Integer Mapper</Title>
