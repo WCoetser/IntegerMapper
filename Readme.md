@@ -47,6 +47,12 @@ IIntegerMapper<IEnumerable<byte>> mapper2 = new ByteEnumerableMapper();
 
 See [https://www.nuget.org/packages/Trs.IntegerMapper/](https://www.nuget.org/packages/Trs.IntegerMapper/) for nuget package.
 
+# Unit Test Code Coverage
+
+Unit tests can be run using the `.\test.ps1` script.
+
+See the `.\UnitTestCoverageReport` folder for code coverage report. This report has been generated using [Coverlet](https://github.com/tonerdo/coverlethttps://github.com/tonerdo/coverlet) and [ReportGenerator](https://github.com/danielpalme/ReportGenerator).
+
 # Licence
 
 Integer Mapper is released under the MIT open source licence. See LICENCE.txt in this repository for the full text.
