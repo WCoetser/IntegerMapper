@@ -12,8 +12,7 @@
     <Company></Company>
     <Title>Integer Mapper</Title>
     <PackageDescription>NB: THIS IS PRE-RELEASE SOFTWARE. Integer Mapper maps .NET types to monotonically increasing integers starting from 0. Null or Empty is mapped to 0. Mappings can be reversed. Integer Mapper is useful for implementing caching and algorithms requiring ranked alphabets over a problem domain.</PackageDescription>
-    <Description>NB: THIS IS PRE-RELEASE SOFTWARE
-Core assembly for Integer Mapper containing base abstraction types and implementations.</Description>
+    <Description>NB: THIS IS PRE-RELEASE SOFTWARE. Integer Mapper maps .NET types to monotonically increasing integers starting from 0. Null or Empty is mapped to 0. Mappings can be reversed. Integer Mapper is useful for implementing caching and algorithms requiring ranked alphabets over a problem domain.</Description>
     <Copyright>Wikus Coetser, 2020, MIT Licence</Copyright>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <!-- TODO: - <PackageReleaseNotes></PackageReleaseNotes>-->
@@ -26,7 +25,7 @@ Core assembly for Integer Mapper containing base abstraction types and implement
     <tags>Integer Mapper Algorithms Ranked Alphabet</tags>
     <PackageTags>Integer Mapper Algorithms Ranked Alphabet</PackageTags>
     <PackageProjectUrl>https://github.com/WCoetser/IntegerMapper.git</PackageProjectUrl>
-    <PackageReleaseNotes>NB: THIS IS PRE-RELEASE SOFTWARE</PackageReleaseNotes>
+    <PackageReleaseNotes>NB: THIS IS PRE-RELEASE SOFTWARE. Integer Mapper maps .NET types to monotonically increasing integers starting from 0. Null or Empty is mapped to 0. Mappings can be reversed. Integer Mapper is useful for implementing caching and algorithms requiring ranked alphabets over a problem domain.</PackageReleaseNotes>
 
     <!-- END NUGET METADATA -->
 
