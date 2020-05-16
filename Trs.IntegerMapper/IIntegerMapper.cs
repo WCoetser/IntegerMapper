@@ -14,20 +14,20 @@
         /// </summary>
         /// <param name="inputValue"></param>
         /// <returns></returns>
-        uint Map(TIn inputValue);
+        ulong Map(TIn inputValue);
 
         /// <summary>
         /// Gets the input value that was associated with an integer using <see cref="Map(TIn)"/>
         /// </summary>
         /// <param name="mappedValue">The output of <see cref="Map(TIn)"/>.</param>
         /// <returns></returns>
-        TIn ReverseMap(uint mappedValue);
+        TIn ReverseMap(ulong mappedValue);
 
         /// <summary>
         /// Gets the number of objects that have been mapped.
         /// Null and empty collections must always be mapped to 0,
         /// therefore there will always al least be 1 element in an <see cref="IntegerMapper"/>.
         /// </summary>
-        uint MappedObjectsCount { get; }
+        ulong MappedObjectsCount { get; }
     }
 }

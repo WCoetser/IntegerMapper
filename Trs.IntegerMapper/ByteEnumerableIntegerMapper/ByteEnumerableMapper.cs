@@ -17,7 +17,7 @@ namespace Trs.IntegerMapper.ByteEnumerableIntegerMapper
         /// <summary>
         /// Next integer to assign to an input value.
         /// </summary>
-        private uint _nextAssignableInteger;
+        private ulong _nextAssignableInteger;
 
         /// <summary>
         /// Keeps track of which integers have been mapped to which values.
@@ -34,7 +34,7 @@ namespace Trs.IntegerMapper.ByteEnumerableIntegerMapper
             };
         }
 
-        public uint Map(IEnumerable<byte>? byteIterator)
+        public ulong Map(IEnumerable<byte>? byteIterator)
         {
             var byteInputEnumerator = byteIterator?.GetEnumerator();
             if (byteIterator == null || !byteInputEnumerator!.MoveNext())
@@ -62,7 +62,7 @@ namespace Trs.IntegerMapper.ByteEnumerableIntegerMapper
             return currentNode.MappedValue.Value;
         }
 
-        public IEnumerable<byte> ReverseMap(uint mappedValue)
+        public IEnumerable<byte> ReverseMap(ulong mappedValue)
         {
             if (mappedValue >= _nextAssignableInteger)
             {
@@ -76,6 +76,6 @@ namespace Trs.IntegerMapper.ByteEnumerableIntegerMapper
             return reverseNode.GetRepresentedValue().Reverse();
         }
 
-        public uint MappedObjectsCount => _nextAssignableInteger;
+        public ulong MappedObjectsCount => _nextAssignableInteger;
     }
 }

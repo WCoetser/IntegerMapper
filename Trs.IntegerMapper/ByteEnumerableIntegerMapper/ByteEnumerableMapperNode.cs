@@ -5,7 +5,7 @@ namespace Trs.IntegerMapper.ByteEnumerableIntegerMapper
 {
     internal class ByteEnumerableMapperNode
     {
-        internal uint? MappedValue;
+        internal ulong? MappedValue;
         internal readonly byte? AssociatedValue;
         private readonly ByteEnumerableMapperNode _parentNode;
 

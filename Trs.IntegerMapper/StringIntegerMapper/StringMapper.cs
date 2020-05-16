@@ -12,7 +12,7 @@ namespace Trs.IntegerMapper.StringIntegerMapper
     {
         private readonly ByteEnumerableMapper _integerMapper = new ByteEnumerableMapper();
 
-        public uint Map(string? inputValue)
+        public ulong Map(string? inputValue)
         {
             if (string.IsNullOrEmpty(inputValue))
             {
@@ -25,7 +25,7 @@ namespace Trs.IntegerMapper.StringIntegerMapper
             }
         }
 
-        public string ReverseMap(uint mappedValue)
+        public string ReverseMap(ulong mappedValue)
         {
             if (mappedValue == MapConstants.NullOrEmpty)
             {
@@ -38,6 +38,6 @@ namespace Trs.IntegerMapper.StringIntegerMapper
             }
         }
 
-        public uint MappedObjectsCount => _integerMapper.MappedObjectsCount;
+        public ulong MappedObjectsCount => _integerMapper.MappedObjectsCount;
     }
 }
