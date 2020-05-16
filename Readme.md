@@ -49,7 +49,9 @@ IIntegerMapper<IEnumerable<byte>> mapper2 = new ByteEnumerableMapper();
 
 # Integer Mapper with the `IEqualityComparer<T>`
 
-Integer mapper allows you to map any .NET type with an equality comparer. For example, map `int` values, the following code could be used:
+Integer mapper allows you to map any .NET type with an equality comparer. 
+
+For example, to map `int` values, the following code could be used:
 
 ```C#
 var intMapper = new EqualityComparerMapper<int>(EqualityComparer<int>.Default);
@@ -57,9 +59,9 @@ var intMapper = new EqualityComparerMapper<int>(EqualityComparer<int>.Default);
 
 # Using the memoizer
 
-In order to use the memoizer, declare integer mappers for the inputs and outputs of the function being memoized, and pass it in.
+In order to use the memoizer, declare integer mappers for the input and output types of the function being memoized, and pass it in.
 
-For example, if you want to calculate the first 92 Fibonacci numbers, and you are not using the recursive formula, you can speed it up by using memoization:
+For example, if you want to calculate the first 92 Fibonacci numbers, and you are using the recursive formula, you can speed it up by using memoization:
 
 ```C#
 var intMapper = new EqualityComparerMapper<long>(EqualityComparer<long>.Default);
