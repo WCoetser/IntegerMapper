@@ -12,7 +12,7 @@ namespace Trs.IntegerMapper.StringIntegerMapper
     {
         private readonly ByteEnumerableMapper _integerMapper = new ByteEnumerableMapper();
 
-        public ulong Map(string? inputValue)
+        public ulong Map(string inputValue)
         {
             if (string.IsNullOrEmpty(inputValue))
             {

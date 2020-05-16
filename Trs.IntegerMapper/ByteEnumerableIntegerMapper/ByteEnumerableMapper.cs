@@ -34,7 +34,7 @@ namespace Trs.IntegerMapper.ByteEnumerableIntegerMapper
             };
         }
 
-        public ulong Map(IEnumerable<byte>? byteIterator)
+        public ulong Map(IEnumerable<byte> byteIterator)
         {
             var byteInputEnumerator = byteIterator?.GetEnumerator();
             if (byteIterator == null || !byteInputEnumerator!.MoveNext())

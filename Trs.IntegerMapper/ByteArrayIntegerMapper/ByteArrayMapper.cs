@@ -7,7 +7,7 @@ namespace Trs.IntegerMapper.ByteArrayIntegerMapper
     {
         private readonly ByteEnumerableMapper _byteEnumerableMapper = new ByteEnumerableMapper();
 
-        public ulong Map(byte[]? inputValue) => _byteEnumerableMapper.Map(inputValue);
+        public ulong Map(byte[] inputValue) => _byteEnumerableMapper.Map(inputValue);
 
         public byte[] ReverseMap(ulong mappedValue) => _byteEnumerableMapper.ReverseMap(mappedValue).ToArray();
 

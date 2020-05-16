@@ -8,7 +8,11 @@ Integer Mapper is useful for implementing hashing and equality in the sense that
 
 It is also possible to get the original data back because the mapped integers preserve equality. This makes it useful for things like caching, or algorithms that need to represent complex data as a simple integer that is mapped to an array address.
 
-# Usage
+_Integer Mapper_ is also well suited to memoization, therefore it includes support for memoization. Any type that has an integer mapper associated with it could also be used save inputs and outputs for functions.
+
+ _Trs.IntegerMapper_ is build on .NET Standard 2.1 for cross-platform compatibility.
+
+# Using the Integer Mapper
 
 The core interface for mapping values is `IIntegerMapper`. All mappers implement this interface.
 
@@ -41,6 +45,56 @@ Integer Mapper also supports `byte[]` and `IEnumberable<byte>`, ex.:
 ```C#
 IIntegerMapper<byte[]> mapper1 = new ByteArrayMapper();
 IIntegerMapper<IEnumerable<byte>> mapper2 = new ByteEnumerableMapper();
+```
+
+# Integer Mapper with the `IEqualityComparer<T>`
+
+Integer mapper allows you to map any .NET type with an equality comparer. For example, map `int` values, the following code could be used:
+
+```C#
+var intMapper = new EqualityComparerMapper<int>(EqualityComparer<int>.Default);
+```
+
+# Using the memoizer
+
+In order to use the memoizer, declare integer mappers for the inputs and outputs of the function being memoized, and pass it in.
+
+For example, if you want to calculate the first 92 Fibonacci numbers, and you are not using the recursive formula, you can speed it up by using memoization:
+
+```C#
+var intMapper = new EqualityComparerMapper<long>(EqualityComparer<long>.Default);
+var nullableIntMapper = new EqualityComparerMapper<long?>(EqualityComparer<long?>.Default);
+
+var memoizer = new Memoizer<long, long?>(intMapper, nullableIntMapper);
+
+long fast_fib(long n)
+{
+    var existingSolution = memoizer.GetOutput(n);
+    var returnValue = (n, existingSolution.HasValue) switch
+    {
+        (0, _) => 0,
+        (1, _) => 1,
+        (_, false) => fast_fib(n - 1) + fast_fib(n - 2),
+        (_, true) => existingSolution.Value
+    };
+    memoizer.Memoize(n, returnValue);
+    return returnValue;
+}
+
+for (int i = 0; i < 92; i++)
+{
+    Console.WriteLine($"Fibonacci number {i + 1} is {fast_fib(i)}");
+}
+
+// Output:
+// Fibonacci number 1 is 0
+// Fibonacci number 2 is 1
+// Fibonacci number 3 is 1
+// Fibonacci number 4 is 2
+// ...
+// Fibonacci number 90 is 1779979416004714189
+// Fibonacci number 91 is 2880067194370816120
+// Fibonacci number 92 is 4660046610375530309
 ```
 
 # Installation via Nuget

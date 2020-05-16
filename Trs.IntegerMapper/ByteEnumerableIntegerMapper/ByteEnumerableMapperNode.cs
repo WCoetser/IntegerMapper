@@ -11,7 +11,7 @@ namespace Trs.IntegerMapper.ByteEnumerableIntegerMapper
 
         internal ByteEnumerableMapperNode[] NextNodes { get; private set; }
 
-        internal ByteEnumerableMapperNode(byte? associatedValue, ByteEnumerableMapperNode? parentNode)
+        internal ByteEnumerableMapperNode(byte? associatedValue, ByteEnumerableMapperNode parentNode)
         {
             NextNodes = new ByteEnumerableMapperNode[byte.MaxValue + 1];
             AssociatedValue = associatedValue;
