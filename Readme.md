@@ -99,6 +99,17 @@ for (int i = 0; i < 92; i++)
 // Fibonacci number 92 is 4660046610375530309
 ```
 
+`ValueTuple` can be used for functions with multiple input parameters, ex.:
+
+```C#
+var inputEqualityComparer = EqualityComparer<ValueTuple<string, int>>.Default;
+var inputMapper = new EqualityComparerMapper<ValueTuple<string, int>>(inputEqualityComparer);
+var outputMapper = new EqualityComparerMapper<double>(EqualityComparer<double>.Default);
+
+var memoizer = new Memoizer<ValueTuple<string, int>, double>(inputMapper, outputMapper);
+memoizer.Memoize(("one", 1), 1.0);
+```
+
 # Installation via Nuget
 
 See [https://www.nuget.org/packages/Trs.IntegerMapper/](https://www.nuget.org/packages/Trs.IntegerMapper/) for nuget package.
