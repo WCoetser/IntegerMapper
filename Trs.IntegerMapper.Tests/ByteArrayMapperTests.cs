@@ -10,26 +10,28 @@ namespace Trs.IntegerMapper.Tests
     [Collection("ByteArrayMapper tests for mapping byte arrays to integers")]
     public class ByteArrayMapperTests
     {
+        private readonly ByteArrayMapper _mapper;
+
+        public ByteArrayMapperTests()
+        {
+            _mapper = new ByteArrayMapper();
+        }
+
+
         [Fact]
         public void DefaultContainerShouldContainEmptyCase()
         {
-            // Act
-            var mapper = new ByteArrayMapper();
-
             // Assert
-            Assert.Equal(1u, mapper.MappedObjectsCount);
-            Assert.Equal(Array.Empty<byte>(), mapper.ReverseMap(0));
+            Assert.Equal(1u, _mapper.MappedObjectsCount);
+            Assert.Equal(Array.Empty<byte>(), _mapper.ReverseMap(0));
         }
 
         [Fact]
         public void ShouldMapNullOrEmptyToZero()
         {
-            // Arrange
-            var mapper = new ByteArrayMapper();
-
             // Act
-            var r1 = mapper.Map(null);
-            var r2 = mapper.Map(Array.Empty<byte>());
+            var r1 = _mapper.Map(null);
+            var r2 = _mapper.Map(Array.Empty<byte>());
 
             // Assert
             Assert.Equal(MapConstants.NullOrEmpty, r1);
@@ -39,11 +41,8 @@ namespace Trs.IntegerMapper.Tests
         [Fact]
         public void ShouldMapValueToFirstAssignableInteger()
         {
-            // Arrange
-            var mapper = new ByteArrayMapper();
-
             // Act
-            var r = mapper.Map(new byte[] { 0x01 });
+            var r = _mapper.Map(new byte[] { 0x01 });
 
             // Assert
             Assert.Equal(MapConstants.FirstMappableInteger, r);
@@ -52,23 +51,21 @@ namespace Trs.IntegerMapper.Tests
         [Fact]
         public void ShouldRepeatedlyMapSameValuesToSameInputs()
         {
-            // Arrange
-            var mapper = new ByteArrayMapper();
+            // Arrange            
             var testData = TestFixtures.GetTestDataForByteArrays();
-
             foreach (var testCase in testData)
             {
                 for (int i = 0; i < 3; i++)
                 {
                     // Act
-                    var r = mapper.Map(testCase.Input);
+                    var r = _mapper.Map(testCase.Input);
 
                     // Assert
                     Assert.Equal(testCase.ExpectedOutput, r);
                 }
             }
 
-            Assert.Equal(testData.Length + 1, (int)mapper.MappedObjectsCount);
+            Assert.Equal(testData.Length + 1, (int)_mapper.MappedObjectsCount);
         }
 
         [Fact]
@@ -89,18 +86,30 @@ namespace Trs.IntegerMapper.Tests
         public void ShouldDoInverseMapForValues()
         {
             // Arrange
-            var mapper = new ByteEnumerableMapper();
             var testData = TestFixtures.GetTestDataForByteArrays();
 
             foreach (var testCase in testData)
             {
                 // Act
-                var r = mapper.Map(testCase.Input);
-                var rInverse = mapper.ReverseMap(r);
+                var r = _mapper.Map(testCase.Input);
+                var rInverse = _mapper.ReverseMap(r);
 
                 // Assert
                 Assert.True(Enumerable.SequenceEqual(testCase.Input, rInverse));
             }
+        }
+
+        [Fact]
+        public void ShouldClear()
+        {
+            // Arrange
+            _mapper.Map(new byte[] { 0x00, 0x01, 0x02 });
+
+            // Act
+            _mapper.Clear();
+
+            // Assert
+            Assert.Equal(1u, _mapper.MappedObjectsCount); // should only contain empty case
         }
     }
 }

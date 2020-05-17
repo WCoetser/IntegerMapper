@@ -29,5 +29,10 @@
         /// therefore there will always al least be 1 element in an <see cref="IntegerMapper"/>.
         /// </summary>
         ulong MappedObjectsCount { get; }
+
+        /// <summary>
+        /// Clears all values stored and resets counts.
+        /// </summary>
+        void Clear();
     }
 }

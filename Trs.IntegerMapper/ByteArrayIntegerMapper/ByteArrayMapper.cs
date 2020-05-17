@@ -11,6 +11,8 @@ namespace Trs.IntegerMapper.ByteArrayIntegerMapper
 
         public byte[] ReverseMap(ulong mappedValue) => _byteEnumerableMapper.ReverseMap(mappedValue).ToArray();
 
+        public void Clear() => _byteEnumerableMapper.Clear();
+
         public ulong MappedObjectsCount => _byteEnumerableMapper.MappedObjectsCount;
     }
 }

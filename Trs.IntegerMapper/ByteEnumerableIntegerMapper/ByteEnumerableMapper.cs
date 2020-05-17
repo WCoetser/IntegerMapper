@@ -12,12 +12,7 @@ namespace Trs.IntegerMapper.ByteEnumerableIntegerMapper
         /// <summary>
         /// The collection of known mapped byte arrays
         /// </summary>
-        private readonly ByteEnumerableMapperNode _rootNode;
-
-        /// <summary>
-        /// Next integer to assign to an input value.
-        /// </summary>
-        private ulong _nextAssignableInteger;
+        private ByteEnumerableMapperNode _rootNode;
 
         /// <summary>
         /// Keeps track of which integers have been mapped to which values.
@@ -26,7 +21,7 @@ namespace Trs.IntegerMapper.ByteEnumerableIntegerMapper
 
         public ByteEnumerableMapper()
         {
-            _nextAssignableInteger = MapConstants.FirstMappableInteger;
+            MappedObjectsCount = MapConstants.FirstMappableInteger;
             _rootNode = new ByteEnumerableMapperNode(null, null);
             _inverseMap = new List<ByteEnumerableMapperNode>
             {
@@ -37,7 +32,7 @@ namespace Trs.IntegerMapper.ByteEnumerableIntegerMapper
         public ulong Map(IEnumerable<byte> byteIterator)
         {
             var byteInputEnumerator = byteIterator?.GetEnumerator();
-            if (byteIterator == null || !byteInputEnumerator!.MoveNext())
+            if (byteIterator == null || !byteInputEnumerator.MoveNext())
             {
                 return MapConstants.NullOrEmpty;
             }
@@ -54,9 +49,9 @@ namespace Trs.IntegerMapper.ByteEnumerableIntegerMapper
 
             if (!currentNode.MappedValue.HasValue)
             {
-                currentNode.MappedValue = _nextAssignableInteger;
+                currentNode.MappedValue = MappedObjectsCount;
                 _inverseMap.Add(currentNode);
-                _nextAssignableInteger++;
+                MappedObjectsCount++;
             }
 
             return currentNode.MappedValue.Value;
@@ -64,7 +59,7 @@ namespace Trs.IntegerMapper.ByteEnumerableIntegerMapper
 
         public IEnumerable<byte> ReverseMap(ulong mappedValue)
         {
-            if (mappedValue >= _nextAssignableInteger)
+            if (mappedValue >= MappedObjectsCount)
             {
                 throw new Exception($"Value has not been mapped: {mappedValue}");
             }
@@ -76,6 +71,13 @@ namespace Trs.IntegerMapper.ByteEnumerableIntegerMapper
             return reverseNode.GetRepresentedValue().Reverse();
         }
 
-        public ulong MappedObjectsCount => _nextAssignableInteger;
+        public void Clear()
+        {
+            MappedObjectsCount = MapConstants.FirstMappableInteger;
+            _rootNode = new ByteEnumerableMapperNode(null, null);
+            _inverseMap.Clear();
+        }
+
+        public ulong MappedObjectsCount { get; private set; }
     }
 }

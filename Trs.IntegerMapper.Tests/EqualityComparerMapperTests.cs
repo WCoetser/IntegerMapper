@@ -26,7 +26,7 @@ namespace Trs.IntegerMapper.Tests
         public void ShouldMapValueToFirstAssignableInteger()
         {
             // Arrange & Act
-            var first = _mapper.Map("testing123");
+            var first = _mapper.Map("testing 123");
 
             // Assert
             Assert.Equal(MapConstants.FirstMappableInteger, first);
@@ -72,6 +72,19 @@ namespace Trs.IntegerMapper.Tests
                 // Assert
                 Assert.Equal(testCase.Input, input);
             }
+        }
+
+        [Fact]
+        public void ShouldClear()
+        {
+            // Arrange
+            _mapper.Map("testing 123");
+
+            // Act
+            _mapper.Clear();
+
+            // Assert
+            Assert.Equal(1u, _mapper.MappedObjectsCount); // should only contain empty case
         }
     }
 }

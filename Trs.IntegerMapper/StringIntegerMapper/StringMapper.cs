@@ -38,6 +38,8 @@ namespace Trs.IntegerMapper.StringIntegerMapper
             }
         }
 
+        public void Clear() => _integerMapper.Clear();
+
         public ulong MappedObjectsCount => _integerMapper.MappedObjectsCount;
     }
 }

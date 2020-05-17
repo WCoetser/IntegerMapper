@@ -34,5 +34,12 @@ namespace Trs.IntegerMapper.EqualityComparerIntegerMapper
                 (_, true) => throw new Exception($"Value has not been mapped: {mappedValue}"),
                 (_, false) => _inverseMappedValues[mappedValue]
             };
+
+        public void Clear()
+        {
+            MappedObjectsCount = MapConstants.FirstMappableInteger;
+            _mappedValues.Clear();
+            _inverseMappedValues.Clear();
+        }
     }
 }
