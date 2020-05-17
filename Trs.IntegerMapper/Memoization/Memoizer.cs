@@ -32,5 +32,16 @@ namespace Trs.IntegerMapper.Memoization
             true => _outputMapper.ReverseMap(mappedOutput),
             _ => default
         };
+
+        /// <summary>
+        /// Clears all memoized values.
+        /// Also clears associated integer mappers.
+        /// </summary>
+        public void ClearAll()
+        {
+            _inputMapper.Clear();
+            _outputMapper.Clear();
+            _existingMappings.Clear();
+        }
     }
 }

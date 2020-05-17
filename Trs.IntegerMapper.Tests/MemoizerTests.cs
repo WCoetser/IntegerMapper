@@ -10,12 +10,14 @@ namespace Trs.IntegerMapper.Tests
     public class MemoizerTests
     {
         private readonly Memoizer<int, double> _memoizer;
+        private readonly EqualityComparerMapper<double> _outputMapper;
+        private readonly EqualityComparerMapper<int> _inputMapper;
 
         public MemoizerTests()
         {
-            var doubleMapper = new EqualityComparerMapper<double>(EqualityComparer<double>.Default);
-            var intMapper = new EqualityComparerMapper<int>(EqualityComparer<int>.Default);
-            _memoizer = new Memoizer<int, double>(intMapper, doubleMapper);
+            _outputMapper = new EqualityComparerMapper<double>(EqualityComparer<double>.Default);
+            _inputMapper = new EqualityComparerMapper<int>(EqualityComparer<int>.Default);
+            _memoizer = new Memoizer<int, double>(_inputMapper, _outputMapper);
         }
 
         private double FibonacciClosedForm(int n)
@@ -65,6 +67,23 @@ namespace Trs.IntegerMapper.Tests
 
             // Assert
             Assert.Equal(0, outputValue);
+        }
+
+        [Fact]
+        public void ShouldClearAllIntegerMappersAndInputOutputMappings()
+        {
+            // Arrange
+            _memoizer.Memoize(1, 2);
+            _memoizer.Memoize(3, 4);
+
+            // Act
+            _memoizer.ClearAll();
+
+            // Assert
+            Assert.Equal(1u, _inputMapper.MappedObjectsCount); // only contains empty case
+            Assert.Equal(1u, _outputMapper.MappedObjectsCount); // only contains empty case
+            Assert.Equal(0, _memoizer.GetOutput(1));
+            Assert.Equal(0, _memoizer.GetOutput(3));
         }
     }
 }
