@@ -10,5 +10,3 @@ Trs.IntegerMapper.Tests/TestResults/
 UnitTestCoverageReport/
 Trs.IntegerMapper.SampleApp/obj/
 Trs.IntegerMapper.SampleApp/bin/
-.gitignore
-Trs.IntegerMapper.SampleApp/Trs.IntegerMapper.SampleApp.csproj
