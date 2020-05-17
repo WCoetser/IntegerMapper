@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Trs.IntegerMapper", "Trs.In
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Trs.IntegerMapper.Tests", "Trs.IntegerMapper.Tests\Trs.IntegerMapper.Tests.csproj", "{D8969094-1ED9-49A7-9BAD-05BAC470DF1D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trs.IntegerMapper.SampleApp", "Trs.IntegerMapper.SampleApp\Trs.IntegerMapper.SampleApp.csproj", "{C5A79962-FCA3-4C97-96F5-80FB44807F3F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,10 @@ Global
 		{D8969094-1ED9-49A7-9BAD-05BAC470DF1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D8969094-1ED9-49A7-9BAD-05BAC470DF1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D8969094-1ED9-49A7-9BAD-05BAC470DF1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5A79962-FCA3-4C97-96F5-80FB44807F3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5A79962-FCA3-4C97-96F5-80FB44807F3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5A79962-FCA3-4C97-96F5-80FB44807F3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5A79962-FCA3-4C97-96F5-80FB44807F3F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

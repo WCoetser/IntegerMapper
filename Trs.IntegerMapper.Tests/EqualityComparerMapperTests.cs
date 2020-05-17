@@ -7,7 +7,7 @@ namespace Trs.IntegerMapper.Tests
 {
     public class EqualityComparerMapperTests
     {
-        private EqualityComparerMapper<string> _mapper;
+        private readonly EqualityComparerMapper<string> _mapper;
 
         public EqualityComparerMapperTests() 
             => _mapper = new EqualityComparerMapper<string>(StringComparer.InvariantCultureIgnoreCase);

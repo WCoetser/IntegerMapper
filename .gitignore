@@ -8,3 +8,11 @@ Trs.IntegerMapper.Tests/obj/
 nupkg/
 Trs.IntegerMapper.Tests/TestResults/
 UnitTestCoverageReport/
+Trs.IntegerMapper.SampleApp/obj/
+Trs.IntegerMapper.SampleApp/bin/
+.gitignore
+Trs.IntegerMapper.sln
+Trs.IntegerMapper.SampleApp/GlobalSuppressions.cs
+Trs.IntegerMapper.SampleApp/Program.cs
+Trs.IntegerMapper.SampleApp/Trs.IntegerMapper.SampleApp.csproj
+Trs.IntegerMapper.Tests/EqualityComparerMapperTests.cs
