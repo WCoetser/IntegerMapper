@@ -10,7 +10,7 @@ It is also possible to get the original data back because the mapped integers pr
 
 _Integer Mapper_ is also well suited to memoization, therefore it includes support for memoization. Any type that has an integer mapper associated with it could also be used save inputs and outputs for functions.
 
- _Trs.IntegerMapper_ is build on .NET Standard 2.1 for cross-platform compatibility.
+ _Trl.IntegerMapper_ is build on .NET Standard 2.1 for cross-platform compatibility.
 
 # Using the Integer Mapper
 
@@ -112,7 +112,7 @@ memoizer.Memoize(("one", 1), 1.0);
 
 # Installation via Nuget
 
-See [https://www.nuget.org/packages/Trs.IntegerMapper/](https://www.nuget.org/packages/Trs.IntegerMapper/) for nuget package.
+See [https://www.nuget.org/packages/Trl.IntegerMapper/](https://www.nuget.org/packages/Trl.IntegerMapper/) for nuget package.
 
 # Unit Test Code Coverage
 
