@@ -1,4 +1,4 @@
-﻿namespace Trs.IntegerMapper
+﻿namespace Trl.IntegerMapper
 {
     public static class MapConstants
     {

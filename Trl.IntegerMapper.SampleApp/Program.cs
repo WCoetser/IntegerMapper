@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using Trs.IntegerMapper.EqualityComparerIntegerMapper;
-using Trs.IntegerMapper.Memoization;
+using Trl.IntegerMapper.EqualityComparerIntegerMapper;
+using Trl.IntegerMapper.Memoization;
 
-namespace Trs.IntegerMapper.SampleApp
+namespace Trl.IntegerMapper.SampleApp
 {
     class Program
     {

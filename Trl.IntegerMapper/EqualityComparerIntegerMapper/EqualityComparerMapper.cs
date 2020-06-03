@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Trs.IntegerMapper.EqualityComparerIntegerMapper
+namespace Trl.IntegerMapper.EqualityComparerIntegerMapper
 {
     public class EqualityComparerMapper<T> : IIntegerMapper<T>
     {

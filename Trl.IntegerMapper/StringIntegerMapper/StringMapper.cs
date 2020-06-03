@@ -1,8 +1,8 @@
 ﻿using System.Linq;
 using System.Text;
-using Trs.IntegerMapper.ByteEnumerableIntegerMapper;
+using Trl.IntegerMapper.ByteEnumerableIntegerMapper;
 
-namespace Trs.IntegerMapper.StringIntegerMapper
+namespace Trl.IntegerMapper.StringIntegerMapper
 {
     /// <summary>
     /// Maps equal strings to equal integers.

@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Trs.IntegerMapper\Trs.IntegerMapper.csproj" />
+    <ProjectReference Include="..\Trl.IntegerMapper\Trl.IntegerMapper.csproj" />
   </ItemGroup>
 
 </Project>

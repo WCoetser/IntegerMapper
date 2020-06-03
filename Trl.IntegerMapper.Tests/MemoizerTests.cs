@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Trs.IntegerMapper.EqualityComparerIntegerMapper;
-using Trs.IntegerMapper.Memoization;
+using Trl.IntegerMapper.EqualityComparerIntegerMapper;
+using Trl.IntegerMapper.Memoization;
 using Xunit;
 
-namespace Trs.IntegerMapper.Tests
+namespace Trl.IntegerMapper.Tests
 {
     public class MemoizerTests
     {

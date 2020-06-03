@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Trs.IntegerMapper.Memoization
+namespace Trl.IntegerMapper.Memoization
 {
     public class Memoizer<TInput, TOutput>
     {

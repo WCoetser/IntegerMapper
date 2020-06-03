@@ -1,8 +1,8 @@
 ﻿using System;
 using Xunit;
-using Trs.IntegerMapper.ByteEnumerableIntegerMapper;
+using Trl.IntegerMapper.ByteEnumerableIntegerMapper;
 
-namespace Trs.IntegerMapper.Tests
+namespace Trl.IntegerMapper.Tests
 {
     [Collection("ByteEnumerableMapperTests tests for mapping byte enumerables to integers")]
     public class ByteEnumerableMapperTests

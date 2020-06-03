@@ -1,4 +1,4 @@
-﻿namespace Trs.IntegerMapper.Tests.Fixtures
+﻿namespace Trl.IntegerMapper.Tests.Fixtures
 {
     public class TestData<T>
     {

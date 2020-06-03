@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Trs.IntegerMapper.ByteEnumerableIntegerMapper
+namespace Trl.IntegerMapper.ByteEnumerableIntegerMapper
 {
     /// <summary>
     /// Maps equal <see cref="IEnumerable{byte}"/> to equal integers.

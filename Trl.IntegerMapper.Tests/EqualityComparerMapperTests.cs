@@ -1,9 +1,9 @@
 ﻿using System;
-using Trs.IntegerMapper.EqualityComparerIntegerMapper;
-using Trs.IntegerMapper.Tests.Fixtures;
+using Trl.IntegerMapper.EqualityComparerIntegerMapper;
+using Trl.IntegerMapper.Tests.Fixtures;
 using Xunit;
 
-namespace Trs.IntegerMapper.Tests
+namespace Trl.IntegerMapper.Tests
 {
     public class EqualityComparerMapperTests
     {
