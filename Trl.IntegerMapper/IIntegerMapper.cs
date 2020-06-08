@@ -26,7 +26,7 @@
         /// <summary>
         /// Gets the number of objects that have been mapped.
         /// Null and empty collections must always be mapped to 0,
-        /// therefore there will always al least be 1 element in an <see cref="IntegerMapper"/>.
+        /// therefore there will always al least be 1 element in an integer mapper.
         /// </summary>
         ulong MappedObjectsCount { get; }
 

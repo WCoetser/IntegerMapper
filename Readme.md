@@ -1,7 +1,5 @@
 # Overview
 
-** NB: THIS IS PRE-RELEASE SOFTWARE **
-
 _Integer Mapper_ maps data structures to monotonically increasing consecutive integers starting from 0, with 0 being reserved for `null` or any collection that is empty. This applies to strings as well, with the empty string being mapped to 0.
 
 Integer Mapper is useful for implementing hashing and equality in the sense that everything is always mapped to a predictable value. The value can serve as a hash code, but that can also directly be used to compare two objects.
@@ -49,13 +47,26 @@ IIntegerMapper<IEnumerable<byte>> mapper2 = new ByteEnumerableMapper();
 
 # Integer Mapper with the `IEqualityComparer<T>`
 
-Integer mapper allows you to map any .NET type with an equality comparer. 
+Integer mapper allows you to map any .NET type with an equality comparer.
 
 For example, to map `int` values, the following code could be used:
 
 ```C#
 var intMapper = new EqualityComparerMapper<int>(EqualityComparer<int>.Default);
 ```
+
+# Mappings collections with `GenericSequenceMapper` for `IEnumerable<T>`
+
+Generic collections can be mapped using an equality comparer for the item type contained in the collection.
+
+For example, to map `IEnumerable<byte>`, the following decleration can be used:
+
+```C#
+var genericSequenceMapper = new GenericSequenceMapper<byte>(EqualityComparer<byte>.Default);
+var mappedValue = genericSequenceMapper.Map(new [] { 1,2,3 });
+```
+
+`GenericSequenceMapper` stores values in a tree data structure to avoid doing multiple enumerations when storing values.
 
 # Using the memoizer
 
