@@ -13,6 +13,9 @@ namespace Trl.IntegerMapper.ByteArrayIntegerMapper
 
         public void Clear() => _byteEnumerableMapper.Clear();
 
+        public bool TryGetMappedValue(byte[] inputValue, out ulong? mappedValue)
+            => _byteEnumerableMapper.TryGetMappedValue(inputValue, out mappedValue);
+
         public ulong MappedObjectsCount => _byteEnumerableMapper.MappedObjectsCount;
     }
 }

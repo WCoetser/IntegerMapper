@@ -41,5 +41,18 @@ namespace Trl.IntegerMapper.EqualityComparerIntegerMapper
             _mappedValues.Clear();
             _inverseMappedValues.Clear();
         }
+
+        public bool TryGetMappedValue(T inputValue, out ulong? mappedValue)
+        {
+            ulong retMappedValue;
+            var retFound = _mappedValues.TryGetValue(inputValue, out retMappedValue);
+            mappedValue = retMappedValue switch
+            {
+                0 => null,
+                _ => retMappedValue
+            };
+            return retFound;
+        }
+
     }
 }

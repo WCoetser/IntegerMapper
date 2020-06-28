@@ -94,5 +94,48 @@ namespace Trl.IntegerMapper.GenericSequenceIntegerMapper
             }
             return sequence.Reverse();
         }
+
+        public bool TryGetMappedValue(IEnumerable<TItem> inputSequence, out ulong? mappedValue)
+        {
+            if (inputSequence == null || !inputSequence.Any())
+            {
+                mappedValue = MapConstants.NullOrEmpty;
+                return true;
+            }
+
+            GenericSequenceNode<TItem> current = _root;
+            var enumerator = inputSequence.GetEnumerator();
+            ulong mapValue = 0;
+            bool hasNext;
+            do
+            {
+                hasNext = enumerator.MoveNext();
+                if (!hasNext)
+                {
+                    if (current.AssignedInteger.HasValue)
+                    {
+                        mapValue = current.AssignedInteger.Value;
+                    }
+                    else
+                    {
+                        mappedValue = null;
+                        return false;
+                    }
+                }
+                else
+                {
+                    var item = enumerator.Current;
+                    if (!current.NextValues.TryGetValue(item, out GenericSequenceNode<TItem> next))
+                    {
+                        mappedValue = null;
+                        return false;
+                    }
+                    current = next;
+                }
+            }
+            while (hasNext);
+            mappedValue = mapValue;
+            return true;
+        }
     }
 }

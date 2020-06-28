@@ -17,6 +17,12 @@
         ulong Map(TIn inputValue);
 
         /// <summary>
+        /// Tries to get value, returns false if it is not found, returns true if it is found.
+        /// Similar to Dictionary.TryGetValue
+        /// </summary>
+        bool TryGetMappedValue(TIn inputValue, out ulong? mappedValue);
+
+        /// <summary>
         /// Gets the input value that was associated with an integer using <see cref="Map(TIn)"/>
         /// </summary>
         /// <param name="mappedValue">The output of <see cref="Map(TIn)"/>.</param>

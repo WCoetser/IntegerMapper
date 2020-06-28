@@ -22,5 +22,8 @@ namespace Trl.IntegerMapper.ByteEnumerableIntegerMapper
         public ulong Map(IEnumerable<byte> inputValue) => _genericSequenceMapper.Map(inputValue);
 
         public IEnumerable<byte> ReverseMap(ulong mappedValue) => _genericSequenceMapper.ReverseMap(mappedValue);
+
+        public bool TryGetMappedValue(IEnumerable<byte> inputValue, out ulong? mappedValue)
+            => _genericSequenceMapper.TryGetMappedValue(inputValue, out mappedValue);
     }
 }

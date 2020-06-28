@@ -23,6 +23,27 @@ namespace Trl.IntegerMapper.Tests
         }
 
         [Fact]
+        public void ShouldGetExistingValueWithoutAddingNewData()
+        {
+            // Arrange
+            var initial1 = _mapper.Map("abc");
+
+            // Act
+            ulong existingObjectCountBefore = _mapper.MappedObjectsCount;
+            ulong? existing1, existing2;
+            var found1 = _mapper.TryGetMappedValue("abc", out existing1);
+            var found2 = _mapper.TryGetMappedValue("456", out existing2);
+            ulong existingObjectCountAfter = _mapper.MappedObjectsCount;
+
+            // Assert
+            Assert.Equal(existingObjectCountBefore, existingObjectCountAfter);
+            Assert.True(found1);
+            Assert.False(found2);
+            Assert.Equal(initial1, existing1.Value);
+            Assert.Null(existing2);
+        }
+
+        [Fact]
         public void ShouldMapNullAndEmptyToZero()
         {
             // Act

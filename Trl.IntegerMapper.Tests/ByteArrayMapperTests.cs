@@ -111,5 +111,27 @@ namespace Trl.IntegerMapper.Tests
             // Assert
             Assert.Equal(1u, _mapper.MappedObjectsCount); // should only contain empty case
         }
+
+        [Fact]
+        public void ShouldGetExistingValueWithoutAddingNewData()
+        {
+            // Arrange
+            var initial1 = _mapper.Map(new byte[] { 0x00, 0x01, 0x02 });
+
+            // Act
+            ulong existingObjectCountBefore = _mapper.MappedObjectsCount;
+            ulong? existing1, existing2;
+            var found1 = _mapper.TryGetMappedValue(new byte[] { 0x00, 0x01, 0x02 }, out existing1);
+            var found2 = _mapper.TryGetMappedValue(new byte[] { 0x00, 0x01 }, out existing2);
+            ulong existingObjectCountAfter = _mapper.MappedObjectsCount;
+
+            // Assert
+            Assert.Equal(existingObjectCountBefore, existingObjectCountAfter);
+            Assert.True(found1);
+            Assert.False(found2);
+            Assert.Equal(initial1, existing1.Value);
+            Assert.Null(existing2);
+        }
+
     }
 }

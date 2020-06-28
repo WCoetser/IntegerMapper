@@ -40,6 +40,12 @@ namespace Trl.IntegerMapper.StringIntegerMapper
 
         public void Clear() => _integerMapper.Clear();
 
+        public bool TryGetMappedValue(string inputValue, out ulong? mappedValue)
+        {
+            byte[] byteString = Encoding.UTF8.GetBytes(inputValue);
+            return _integerMapper.TryGetMappedValue(byteString, out mappedValue);
+        }
+
         public ulong MappedObjectsCount => _integerMapper.MappedObjectsCount;
     }
 }
