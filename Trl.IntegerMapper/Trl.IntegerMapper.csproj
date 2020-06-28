@@ -7,7 +7,7 @@
     <!-- BEGIN NUGET METADATA -->
 
     <PackageId>Trl.IntegerMapper</PackageId>
-    <Version>1.0.0</Version>
+    <Version>1.0.1</Version>
     <Authors>Wikus Coetser</Authors>
     <Company></Company>
     <Title>Integer Mapper</Title>
@@ -23,7 +23,7 @@
     <RepositoryBranch>master</RepositoryBranch>
     <!-- TODO: <MinClientVersion></MinClientVersion>-->
     <tags>Integer Mapper Algorithms Ranked Alphabet</tags>
-    <PackageTags>Integer Mapper Algorithms Ranked Alphabet</PackageTags>
+    <PackageTags>Integer Mapper Algorithms Ranked_Alphabet Generic_Data_Structure</PackageTags>
     <PackageProjectUrl>https://github.com/WCoetser/Trl.IntegerMapper</PackageProjectUrl>
     <PackageReleaseNotes>Integer Mapper maps .NET types to monotonically increasing integers starting from 0. Null or Empty is mapped to 0. Mappings can be reversed. Integer Mapper is useful for implementing caching, memoization, and algorithms requiring ranked alphabets over a problem domain.</PackageReleaseNotes>
 
